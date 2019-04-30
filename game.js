@@ -52,9 +52,18 @@ function Refresh()
 
 function FormatTime(ms)
 {
-	//var time = 
+	var time = ms.toString();
 
-	return ms.toString();
+	if (time.length == 4)
+		time = "0" + time.slice(0, 1) + "." + time.slice(1);
+	else if (time.length == 3)
+		time = "00." + time;
+	else if (time.length == 2)
+		time = "00.0" + time;
+	else if (time.length == 1)
+		time = "00.00" + time;
+
+	return time;
 }
 
 function TouchStart(e)

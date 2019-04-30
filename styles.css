@@ -1,9 +1,12 @@
 ﻿body
 {
-	background-color:#4800ff;
+	background-color:#dbdbdb;
 	font-family:Arial;
 	font-size:15px;
-	color:white;
+}
+h1
+{
+	font-size:3em;
 }
 #TitleScreen
 {
@@ -12,6 +15,14 @@
 #GameScreen
 {
 	text-align: center;
+}
+#Time
+{
+	font-size:2em;
+}
+#Taps
+{
+	font-size:3em;
 }
 #QuitButton
 {
