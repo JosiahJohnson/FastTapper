@@ -5,10 +5,21 @@
     <title>Fast Tapper 9000</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="game.js?rev=1"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css?rev=1" />
 </head>
 <body>
-	<span id="Time"></span><br />
-	<span id="Taps"></span>
+	<div id="TitleScreen">
+		<h1>Fast Tapper 9000</h1>
+		<p>See how fast you can tap your screen!</p>
+		<p>Tap anywhere to begin.</p>
+	</div>
+	<div id="GameScreen" style="display:none;">
+		<h2 id="Time"></h2>
+		<h1 id="Taps"></h1>
+		<div id="GameOverDiv" style="display:none;">
+			<input id="QuitButton" type="button" value="Quit" />
+		</div>
+	</div>
 </body>
 </html>

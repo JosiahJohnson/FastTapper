@@ -1,0 +1,19 @@
+﻿body
+{
+	background-color:#4800ff;
+	font-family:Arial;
+	font-size:15px;
+	color:white;
+}
+#TitleScreen
+{
+	text-align:center;
+}
+#GameScreen
+{
+	text-align: center;
+}
+#QuitButton
+{
+	font-size:1.5em;
+}

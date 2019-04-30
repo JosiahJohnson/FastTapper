@@ -1,15 +1,25 @@
 var timeLimit = 10000;
 var prevTime, taps;
 var gameOver = true;
+var touchToStart = true;
 
 $(function ()
 {
 	document.addEventListener("touchstart", TouchStart, { passive: false });
 	document.addEventListener("touchmove", TouchMove, { passive: false });
+	$("#QuitButton").click(function ()
+	{
+		$("#TitleScreen").show();
+		$("#GameScreen").hide();
+		$("#GameOverDiv").hide();
+		touchToStart = true;
+	});
 });
 
 function ResetGame()
 {
+	$("#TitleScreen").hide();
+	$("#GameScreen").show();
 	prevTime = Math.round(performance.now());
 	taps = 1;
 
@@ -29,10 +39,22 @@ function Refresh()
 	{
 		timeLeft = 0;
 		gameOver = true;
-		alert("Score: " + taps);
+		touchToStart = false;
+
+		setTimeout(function ()
+		{
+			$("#GameOverDiv").show();
+		}, 1500);
 	}
 
-	$("#Time").text(timeLeft);
+	$("#Time").text(FormatTime(timeLeft));
+}
+
+function FormatTime(ms)
+{
+	//var time = 
+
+	return ms.toString();
 }
 
 function TouchStart(e)
@@ -40,14 +62,14 @@ function TouchStart(e)
 	if (!gameOver)
 	{
 		taps++;
+		$("#Taps").text(taps);
 	}
-	else
+	else if (touchToStart)
 	{
 		gameOver = false;
 		ResetGame();
+		$("#Taps").text(taps);
 	}
-
-	$("#Taps").text(taps);
 }
 
 function TouchMove(e)
